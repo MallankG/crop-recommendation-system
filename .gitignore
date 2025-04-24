@@ -1,0 +1,16 @@
+# Ignore environment variable files
+.env
+.env.*
+# Ignore model and data files
+ensemble_model.pkl
+scaler.pkl
+2.csv
+evi_mod13q1*.tif
+# Ignore Python cache and OS files
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+# Ignore VSCode settings
+.vscode/
+node_modules
