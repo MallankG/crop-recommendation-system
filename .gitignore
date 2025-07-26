@@ -14,3 +14,6 @@ Thumbs.db
 # Ignore VSCode settings
 .vscode/
 node_modules
+
+1.py
+yield_prediction.py
