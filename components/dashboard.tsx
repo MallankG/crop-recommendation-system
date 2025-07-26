@@ -72,7 +72,7 @@ export default function Dashboard() {
     }
     try {
       setError("Processing request. This may take some time for large regions...")
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -85,7 +85,6 @@ export default function Dashboard() {
         throw new Error(`Error: ${response.status} ${response.statusText}`)
       }
       const data = await response.json()
-      console.log('Backend /predict response:', data); // Debug log
       // Check if we got a valid response
       if (!data || (data.error && !data.ndvi_mean)) {
         throw new Error(data.error || "Invalid response from server");
@@ -116,7 +115,6 @@ export default function Dashboard() {
 
       // Start polling for background task updates
       if (data.task_id) {
-        console.log("Starting background task polling with ID:", data.task_id);
         startPollingBackgroundTask(data.task_id);
       }
     } catch (err: any) {
@@ -138,7 +136,7 @@ export default function Dashboard() {
 
     const interval = setInterval(async () => {
       try {
-        const response = await fetch(`http://localhost:5000/task-status/${taskId}`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/task-status/${taskId}`);
         if (!response.ok) {
           if (response.status === 404) {
             console.error('Background task not found');

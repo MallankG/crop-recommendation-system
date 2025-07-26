@@ -74,7 +74,7 @@ async function processBatchJob(batchId: string, selectedCrop: string | null) {
       region.status = "processing"
 
       // Call the Flask backend
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

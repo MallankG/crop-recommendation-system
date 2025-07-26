@@ -1,4 +1,4 @@
-// File: E:\Projects\crop-yield-prediction\app\layout.tsx
+// File: /Users/mallank/Developer/crop-recommendation-system/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
