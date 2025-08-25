@@ -1,4 +1,4 @@
-# Crop Yield Prediction
+# Crop Yield Prediction - https://crop-recommendation-system-research.vercel.app/
 
 This project predicts crop yield using satellite imagery, weather data, and soil properties. It features a backend powered by Python (Flask, Earth Engine, ML models) and a modern frontend (Next.js, React, Tailwind CSS).
 
